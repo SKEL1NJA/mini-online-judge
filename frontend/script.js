@@ -1,5 +1,12 @@
 // ===============================
-// MONACO EDITOR SETUP
+// CONFIG
+// ===============================
+const API = "https://mini-online-judge.onrender.com"
+// later replace with your render link
+
+
+// ===============================
+// MONACO EDITOR
 // ===============================
 
 let editor;
@@ -38,7 +45,7 @@ int main(){
 
 async function loadProblems() {
 
-    const res = await fetch("http://localhost:3000/problems");
+    const res = await fetch(`${API}/problems`);
     const problems = await res.json();
 
     const list = document.getElementById("problemList");
@@ -84,12 +91,17 @@ async function submitCode() {
         return;
     }
 
+    // 🔥 prevents Monaco crash
+    if (!editor) {
+        alert("Editor still loading...");
+        return;
+    }
+
     document.getElementById("verdict").innerText = "Running...";
 
-    // 🔥 IMPORTANT: get code from Monaco editor
     const code = editor.getValue();
 
-    const res = await fetch("http://localhost:3000/submit", {
+    const res = await fetch(`${API}/submit`, {
 
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -98,7 +110,6 @@ async function submitCode() {
             code,
             problemId: currentProblem.id
         })
-
     });
 
     const data = await res.json();
