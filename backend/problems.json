@@ -1,11 +1,15 @@
 [
   {
-    "id":1,
-    "title":"Add Two Numbers",
-    "description":"Read two integers and print their sum",
-    "sampleInput":"2 3",
-    "sampleOutput":"5",
-    "input":"2 3",
-    "output":"5"
+    "id": 1,
+    "title": "Add Two Numbers",
+    "description": "Read two integers and print their sum",
+    "sampleInput": "2 3",
+    "sampleOutput": "5",
+    "testcases": [
+      { "input": "2 3", "output": "5" },
+      { "input": "10 20", "output": "30" },
+      { "input": "7 8", "output": "15" },
+      { "input": "100 1", "output": "101" }
+    ]
   }
 ]

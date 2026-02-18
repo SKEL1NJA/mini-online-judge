@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>Mini Online Judge</title>
 
 <link rel="stylesheet" href="style.css">
+
+<!-- Monaco Editor loader -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.min.js"></script>
+
 </head>
 
 <body>
 
-<header>Mini Online Judge</header>
+<header class="topbar">
+    <div class="logo">Mini Online Judge</div>
+</header>
 
 <div class="container">
 
-<!-- SIDEBAR -->
-<div class="sidebar" id="problemList">
-    <h3>Problems</h3>
-</div>
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar" id="problemList">
+        <h3>Problems</h3>
+    </aside>
 
-<!-- MAIN -->
-<div class="main">
+    <!-- MAIN CONTENT -->
+    <main class="main">
 
-<div id="desc">
-    <h2>Select a problem</h2>
-</div>
+        <!-- Problem Description -->
+        <section id="desc" class="card">
+            <h2>Select a problem</h2>
+        </section>
 
-<textarea id="code">
-#include <bits/stdc++.h>
-using namespace std;
+        <!-- CODE EDITOR -->
+        <section class="card">
+            <div id="editor" style="height:320px;"></div>
+        </section>
 
-int main(){
-    int a,b;
-    cin>>a>>b;
-    cout<<a+b;
-}
-</textarea>
+        <!-- SUBMIT -->
+        <button class="submit-btn" onclick="submitCode()">Submit Code</button>
 
-<button onclick="submitCode()">Submit Code</button>
+        <!-- VERDICT -->
+        <div id="verdict" class="verdict"></div>
 
-<div id="verdict"></div>
+    </main>
 
-</div>
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
