@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mini Online Judge</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>Mini Online Judge</header>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="problemList">
+    <h3>Problems</h3>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div id="desc">
+    <h2>Select a problem</h2>
+</div>
+
+<textarea id="code">
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int a,b;
+    cin>>a>>b;
+    cout<<a+b;
+}
+</textarea>
+
+<button onclick="submitCode()">Submit Code</button>
+
+<div id="verdict"></div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
